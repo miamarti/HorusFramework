@@ -29,7 +29,7 @@ public class HorusFrontController extends HttpServlet {
 				String getMethod = (request.getMethod().equals("GET") ? "doGet" : (request.getMethod().equals("POST") ? "doPost" : (request.getMethod().equals("DELETE") ? "doDelete" : (request.getMethod().equals("PUT") ? "doPut" : request.getMethod()))));
 				Class.forName(nameClass).getDeclaredMethod(getMethod, HttpServletRequest.class, HttpServletResponse.class, String[].class).invoke(Class.forName(nameClass).newInstance(), request, response, uri);
 			} else {
-				System.out.println("Please inform the field of packets through the annotation 'DomainPackage'");
+				System.out.println("Please inform the field of packets through the annotation 'DomainPackage'...");
 			}
 		} catch (Exception e) {
 			response.setStatus(501);
