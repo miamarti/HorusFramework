@@ -1,12 +1,10 @@
 package business;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 import model.ActorBean;
 
 import com.horusframework.annotation.HorusAccessId;
-import com.horusframework.business.HorusToJSON;
 
 import dao.APIBaseDAO;
 
@@ -23,11 +21,11 @@ public class ActorBO {
 	 * @param response
 	 * @param uri
 	 */
-	public void getList(HttpServletRequest request, HttpServletResponse response, String[] uri) {
+	public Object getList(HttpServletRequest request, String[] uri) {
 		if (access) {
-			HorusToJSON.getWriter.write(response, APIBaseDAO.ActorDAO.getInstance.getLista());
+			return APIBaseDAO.ActorDAO.getInstance.getLista();
 		} else {
-			HorusToJSON.getWriter.write(response, "{\"action\":false}");
+			return null;
 		}
 	}
 
@@ -36,14 +34,14 @@ public class ActorBO {
 	 * @param response
 	 * @param uri
 	 */
-	public void setNew(HttpServletRequest request, HttpServletResponse response, String[] uri) {
+	public String setNew(HttpServletRequest request, String[] uri) {
 		if (access) {
 			ActorBean actor = new ActorBean();
 			actor.setFirstName(request.getParameter("firstName"));
 			actor.setLastName(request.getParameter("lastName"));
-			HorusToJSON.getWriter.write(response, "{\"action\":" + APIBaseDAO.ActorDAO.getInstance.setActor(actor).toString() + "}");
+			return "{\"action\":" + APIBaseDAO.ActorDAO.getInstance.setActor(actor).toString() + "}";
 		} else {
-			HorusToJSON.getWriter.write(response, "{\"action\":false}");
+			return "{\"action\":false}";
 		}
 	}
 
@@ -52,12 +50,12 @@ public class ActorBO {
 	 * @param response
 	 * @param uri
 	 */
-	public void setUpdate(HttpServletRequest request, HttpServletResponse response, String[] uri) {
+	public String setUpdate(HttpServletRequest request, String[] uri) {
 		// TODO: Here you implement your method and everything :)
 		if (access) {
-			HorusToJSON.getWriter.write(response, "{\"action\":true}");
+			return "{\"action\":true}";
 		} else {
-			HorusToJSON.getWriter.write(response, "{\"action\":false}");
+			return "{\"action\":false}";
 		}
 	}
 
@@ -66,12 +64,12 @@ public class ActorBO {
 	 * @param response
 	 * @param uri
 	 */
-	public void setDelete(HttpServletRequest request, HttpServletResponse response, String[] uri) {
+	public String setDelete(HttpServletRequest request, String[] uri) {
 		// TODO: Here you implement your method and everything :)
 		if (access) {
-			HorusToJSON.getWriter.write(response, "{\"action\":true}");
+			return "{\"action\":true}";
 		} else {
-			HorusToJSON.getWriter.write(response, "{\"action\":false}");
+			return "{\"action\":false}";
 		}
 	}
 }
