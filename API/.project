@@ -3,6 +3,7 @@
 	<name>API</name>
 	<comment></comment>
 	<projects>
+		<project>com.horusframework</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
