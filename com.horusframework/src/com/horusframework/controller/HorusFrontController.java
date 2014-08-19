@@ -23,11 +23,7 @@ public class HorusFrontController extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) {
 		try {
 			if (this.getClass().isAnnotationPresent(HorusDomainPackage.class)) {
-				String[] uri = request.getRequestURI().split("/");
-				HorusDomainPackage domainPackage = (this.getClass().getAnnotation(HorusDomainPackage.class));
-				String nameClass = domainPackage.name() + "." + uri[3] + domainPackage.alias();
-				String getMethod = (request.getMethod().equals("GET") ? "doGet" : (request.getMethod().equals("POST") ? "doPost" : (request.getMethod().equals("DELETE") ? "doDelete" : (request.getMethod().equals("PUT") ? "doPut" : request.getMethod()))));
-				Class.forName(nameClass).getDeclaredMethod(getMethod, HttpServletRequest.class, HttpServletResponse.class, String[].class).invoke(Class.forName(nameClass).newInstance(), request, response, uri);
+				Class.forName((this.getClass().getAnnotation(HorusDomainPackage.class)).name() + "." + request.getRequestURI().split("/")[3] + (this.getClass().getAnnotation(HorusDomainPackage.class)).alias()).getDeclaredMethod((request.getMethod().equals("GET") ? "doGet" : (request.getMethod().equals("POST") ? "doPost" : (request.getMethod().equals("DELETE") ? "doDelete" : (request.getMethod().equals("PUT") ? "doPut" : request.getMethod())))), HttpServletRequest.class, HttpServletResponse.class, String[].class).invoke(Class.forName((this.getClass().getAnnotation(HorusDomainPackage.class)).name() + "." + request.getRequestURI().split("/")[3] + (this.getClass().getAnnotation(HorusDomainPackage.class)).alias()).newInstance(), request, response, request.getRequestURI().split("/"));
 			} else {
 				System.out.println("Please inform the field of packets through the annotation 'DomainPackage'");
 			}

@@ -14,6 +14,6 @@ public class HorusOracleConnection {
 	 * @return
 	 */
 	public static Connection getConnection(HorusConnectionParameters stringConnection) {
-		return HorusOracleDriveConnection.getInstance.getConnection(stringConnection);
+		return (new HorusOracleDriveConnection()).getConnection(stringConnection);
 	}
 }

@@ -8,17 +8,16 @@ import oracle.jdbc.pool.OracleDataSource;
 
 import com.horusframework.annotation.HorusConnectionParameters;
 
-public enum HorusOracleDriveConnection {
-	getInstance;
+public class HorusOracleDriveConnection {
 
-	private static Connection connection = null;
+	private Connection connection = null;
 	private static Boolean reconect = true;
 	private static HorusConnectionParameters stringConnection = null;
 
 	HorusOracleDriveConnection() {
 	}
 
-	private static final void StartConnection() {
+	private void StartConnection() {
 		try {
 			Locale.setDefault(new Locale(stringConnection.language(), stringConnection.country()));
 			OracleDataSource ods = new OracleDataSource();
@@ -36,11 +35,11 @@ public enum HorusOracleDriveConnection {
 
 	public Connection getConnection(HorusConnectionParameters stringConnection) {
 		try {
-			if (HorusOracleDriveConnection.connection == null) {
+			if (connection == null) {
 				HorusOracleDriveConnection.stringConnection = stringConnection;
 				StartConnection();
 			} else {
-				if (!HorusOracleDriveConnection.connection.isValid(0)) {
+				if (!connection.isValid(0)) {
 					if (HorusOracleDriveConnection.reconect) {
 						HorusOracleDriveConnection.reconect = false;
 						StartConnection();
@@ -48,7 +47,7 @@ public enum HorusOracleDriveConnection {
 					}
 				}
 			}
-			return HorusOracleDriveConnection.connection;
+			return connection;
 		} catch (SQLException e) {
 			System.out.println("getConnection does not respond because not finding this connection");
 			e.printStackTrace();
