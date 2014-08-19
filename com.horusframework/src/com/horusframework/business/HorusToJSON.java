@@ -17,7 +17,7 @@ import org.json.simple.JSONValue;
  * @author miamarti
  *
  */
-public class HorusRsToJSON {
+public class HorusToJSON {
 
 	/**
 	 * @author miamarti
@@ -30,32 +30,30 @@ public class HorusRsToJSON {
 		 * @param rs
 		 * @throws SQLException
 		 */
-		static public void write(HttpServletResponse response, ResultSet rs) {
+		static public void write(HttpServletResponse response, Object rs) {
 			Map<String, String> content = new Hashtable<String, String>();
 			List<Map<String, String>> data = new ArrayList<Map<String, String>>();
-			String jsonString;
 			try {
-				ResultSetMetaData rsMetaData = rs.getMetaData();
+				ResultSetMetaData rsMetaData = ((ResultSet) rs).getMetaData();
 				int numberOfColumns = rsMetaData.getColumnCount();
-				while (rs.next()) {
+				while (((ResultSet) rs).next()) {
 					for (int i = 1; i <= numberOfColumns; i++) {
 						String ColumnName = rsMetaData.getColumnName(i);
-						content.put(ColumnName, (rs.getString(ColumnName) != null ? rs.getString(ColumnName).trim() : ""));
+						content.put(ColumnName, (((ResultSet) rs).getString(ColumnName) != null ? ((ResultSet) rs).getString(ColumnName).trim() : ""));
 					}
 					data.add(new Hashtable<String, String>(content));
 					content.clear();
 				}
-				jsonString = JSONValue.toJSONString(data);
 				response.setContentType("application/json;charset=UTF-8");
-				response.getWriter().println(jsonString);
+				response.getWriter().println(JSONValue.toJSONString(data));
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
 
 		static public void write(HttpServletResponse response, String jsonString) {
-			response.setContentType("application/json;charset=UTF-8");
 			try {
+				response.setContentType("application/json;charset=UTF-8");
 				response.getWriter().println(jsonString);
 			} catch (IOException e) {
 				e.printStackTrace();
