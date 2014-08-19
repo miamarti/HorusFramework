@@ -3,7 +3,7 @@ package business;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.horusframework.business.HorusRsToJSON;
+import com.horusframework.business.HorusToJSON;
 
 import dao.APIBaseDAO;
 
@@ -11,7 +11,7 @@ import dao.APIBaseDAO;
  * @author miamarti
  *
  */
-public class CountryBO extends HorusRsToJSON {
+public class CountryBO extends HorusToJSON {
 
 	/**
 	 * @param request

@@ -5,28 +5,29 @@ import javax.servlet.http.HttpServletResponse;
 
 import business.ActorBO;
 
+import com.horusframework.annotation.HorusAccessId;
 import com.horusframework.facade.HorusRESTFullInterface;
 
-public class Actor implements HorusRESTFullInterface {
+@HorusAccessId("33")
+public class Actor extends ActorBO implements HorusRESTFullInterface {
 
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response, String[] uri) {
-		ActorBO.getList(request, response, uri);
+		getList(request, response, uri);
 	}
 
 	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response, String[] uri) {
-		ActorBO.setNew(request, response, uri);
+		setNew(request, response, uri);
 	}
 
 	@Override
 	public void doPut(HttpServletRequest request, HttpServletResponse response, String[] uri) {
-		// TODO Auto-generated method stub
+		setUpdate(request, response, uri);
 	}
 
 	@Override
 	public void doDelete(HttpServletRequest request, HttpServletResponse response, String[] uri) {
-		// TODO Auto-generated method stub
+		setDelete(request, response, uri);
 	}
-
 }
