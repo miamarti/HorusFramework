@@ -6,7 +6,7 @@ import com.horusframework.annotation.HorusConnectionParameters;
 import com.horusframework.dao.HorusMySQLConnection;
 
 public enum MySQL {
-	@HorusConnectionParameters(host = "sjkap356", port = "3306", database = "sakila", user = "sakila", password = "PasswordHorn13245")
+	@HorusConnectionParameters(host = "localhost", port = "3306", database = "sakila", user = "sakila", password = "PasswordHorn13245")
 	getInstance;
 
 	public Connection getConnection() {
