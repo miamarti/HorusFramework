@@ -7,6 +7,8 @@ import java.sql.Statement;
 
 import javax.servlet.http.HttpServletRequest;
 
+import model.ActorBean;
+
 import com.horusframework.facade.HorusBaseDAOCRUDInterface;
 
 /**
@@ -155,14 +157,14 @@ public class APIBaseDAO {
 	 * @author miamarti
 	 * 
 	 */
-	public static class CustomersDAO extends QueriesStandardsDB implements HorusBaseDAOCRUDInterface {
+	public static class CityDAO extends QueriesStandardsDB implements HorusBaseDAOCRUDInterface {
 
 		/**
 		 * Singleton implement
 		 */
-		public static final CustomersDAO getInstance = new CustomersDAO();
+		public static final CityDAO getInstance = new CityDAO();
 
-		private CustomersDAO() {
+		private CityDAO() {
 		}
 
 		/*
@@ -173,15 +175,15 @@ public class APIBaseDAO {
 		public ResultSet getLista(String... args) throws SQLException {
 			PreparedStatement stmt;
 			if (args.length < 2) {
-				stmt = MySQL.getInstance.getConnection().prepareStatement("SELECT * FROM customers;");
+				stmt = MySQL.getInstance.getConnection().prepareStatement("SELECT * FROM city;");
 			} else {
 				if (args.length > 2) {
-					stmt = MySQL.getInstance.getConnection().prepareStatement("SELECT * FROM customers WHERE (`customer_id` LIKE ?) OR (`customer_name` LIKE ?) OR (`customer_fone` LIKE ?) LIMIT " + args[0] + " , " + args[1] + ";");
+					stmt = MySQL.getInstance.getConnection().prepareStatement("SELECT * FROM city WHERE (`city_id` LIKE ?) OR (`city` LIKE ?) OR (`country_id` LIKE ?) LIMIT " + args[0] + " , " + args[1] + ";");
 					stmt.setString(1, "%" + args[2] + "%");
 					stmt.setString(2, "%" + args[2] + "%");
 					stmt.setString(3, "%" + args[2] + "%");
 				} else {
-					stmt = MySQL.getInstance.getConnection().prepareStatement("SELECT * FROM customers LIMIT " + args[0] + " , " + args[1] + ";");
+					stmt = MySQL.getInstance.getConnection().prepareStatement("SELECT * FROM city LIMIT " + args[0] + " , " + args[1] + ";");
 				}
 			}
 			return super.getRLista(stmt);
@@ -196,13 +198,13 @@ public class APIBaseDAO {
 		public int[] setData(HttpServletRequest request, String... args) throws SQLException {
 			PreparedStatement stmt;
 			if (args.length < 1) {
-				stmt = MySQL.getInstance.getConnection().prepareStatement("INSERT INTO `customers` (`customer_name`,`customer_fone`) VALUES (?, ?)", Statement.RETURN_GENERATED_KEYS);
+				stmt = MySQL.getInstance.getConnection().prepareStatement("INSERT INTO `city` (`city`,`country_id`) VALUES (?, ?)", Statement.RETURN_GENERATED_KEYS);
 			} else {
-				stmt = MySQL.getInstance.getConnection().prepareStatement("UPDATE `customers` SET `customer_name` = ?, `customer_fone` = ? WHERE `customer_id` = ?", Statement.RETURN_GENERATED_KEYS);
+				stmt = MySQL.getInstance.getConnection().prepareStatement("UPDATE `city` SET `city` = ?, `country_id` = ? WHERE `city_id` = ?", Statement.RETURN_GENERATED_KEYS);
 				stmt.setString(3, args[0]);
 			}
-			stmt.setString(1, request.getParameter("customer_name"));
-			stmt.setString(2, request.getParameter("customer_fone"));
+			stmt.setString(1, request.getParameter("city"));
+			stmt.setString(2, request.getParameter("country_id"));
 			return super.setData(stmt);
 		}
 
@@ -212,7 +214,7 @@ public class APIBaseDAO {
 		 * @see dao.BaseDAOBean#getId(java.lang.String)
 		 */
 		public ResultSet getId(String id) throws SQLException {
-			return super.getId(id, "customers", "customer_id");
+			return super.getId(id, "city", "city_id");
 		}
 
 		/*
@@ -222,7 +224,7 @@ public class APIBaseDAO {
 		 * java.lang.String)
 		 */
 		public ResultSet getByWhere(String colName, String value) throws SQLException {
-			return super.getByWhere(colName, value, "customers");
+			return super.getByWhere(colName, value, "city");
 		}
 
 		/*
@@ -232,7 +234,84 @@ public class APIBaseDAO {
 		 * deletar Area
 		 */
 		public Boolean delData(String id) throws SQLException {
-			return super.delData(id, "customers", "customer_id");
+			return super.delData(id, "city", "city_id");
+		}
+	}
+
+	/**
+	 * @author miamarti
+	 * 
+	 */
+	public static class CountryDAO {
+
+		/**
+		 * Singleton implement
+		 */
+		public static final CountryDAO getInstance = new CountryDAO();
+
+		private CountryDAO() {
+		}
+
+		/*
+		 * (non-Javadoc)
+		 * 
+		 * @see dao.BaseDAOBean#getLista(java.lang.String[])
+		 */
+		public ResultSet getLista(String... args) {
+			try {
+				PreparedStatement stmt = MySQL.getInstance.getConnection().prepareStatement("SELECT * FROM country;");
+				return stmt.executeQuery();
+			} catch (Exception e) {
+				e.printStackTrace();
+				return null;
+			}
+		}
+	}
+
+	/**
+	 * @author miamarti
+	 * 
+	 */
+	public static class ActorDAO {
+
+		/**
+		 * Singleton implement
+		 */
+		public static final ActorDAO getInstance = new ActorDAO();
+
+		private ActorDAO() {
+		}
+
+		/*
+		 * (non-Javadoc)
+		 * 
+		 * @see dao.BaseDAOBean#getLista(java.lang.String[])
+		 */
+		public ResultSet getLista(String... args) {
+			try {
+				PreparedStatement stmt = MySQL.getInstance.getConnection().prepareStatement("SELECT * FROM actor;");
+				return stmt.executeQuery();
+			} catch (Exception e) {
+				e.printStackTrace();
+				return null;
+			}
+		}
+
+		/**
+		 * @param actor
+		 * @return
+		 */
+		public Boolean setActor(ActorBean actor) {
+			try {
+				PreparedStatement stmt = MySQL.getInstance.getConnection().prepareStatement("INSERT INTO `actor` (`first_name`,`last_name`) VALUES (?, ?)", Statement.RETURN_GENERATED_KEYS);
+				stmt.setString(1, actor.getFirstName());
+				stmt.setString(2, actor.getLastName());
+				stmt.executeUpdate();
+				return true;
+			} catch (SQLException e) {
+				e.printStackTrace();
+				return false;
+			}
 		}
 	}
 }

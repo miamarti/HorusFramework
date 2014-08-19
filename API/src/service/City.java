@@ -12,8 +12,8 @@ import dao.APIBaseDAO;
  * @author miamarti
  *
  */
-@HorusBaseDAO(APIBaseDAO.CustomersDAO.class)
-public class Customers extends RESTFullCRUDImplement {
+@HorusBaseDAO(APIBaseDAO.CityDAO.class)
+public class City extends RESTFullCRUDImplement {
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response, String[] uri) throws Exception {
 		super.doGet(request, response, uri);
