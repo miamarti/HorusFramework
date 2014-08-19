@@ -8,12 +8,12 @@ import com.horusframework.annotation.HorusConnectionParameters;
  * @author miamarti
  *
  */
-public class HorusConnection {
+public class HorusOracleConnection {
 
 	/**
 	 * @return
 	 */
 	public static Connection getConnection(HorusConnectionParameters stringConnection) {
-		return HorusDriveConnection.getInstance.getConnection(stringConnection);
+		return HorusOracleDriveConnection.getInstance.getConnection(stringConnection);
 	}
 }

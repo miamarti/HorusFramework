@@ -16,11 +16,6 @@ public @interface HorusConnectionParameters {
 	/**
 	 * @return
 	 */
-	String driverName() default "com.mysql.jdbc.Driver";
-
-	/**
-	 * @return
-	 */
 	String database() default "test";
 
 	/**
@@ -41,10 +36,20 @@ public @interface HorusConnectionParameters {
 	/**
 	 * @return
 	 */
-	String jdbc() default "mysql";
+	String language() default "pt";
 
 	/**
 	 * @return
 	 */
-	String port() default "3306";
+	String country() default "BR";
+
+	/**
+	 * @return
+	 */
+	String port() default "";
+
+	/**
+	 * @return
+	 */
+	boolean autoCommit() default true;
 }
