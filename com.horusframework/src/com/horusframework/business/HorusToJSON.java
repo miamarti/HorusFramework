@@ -11,6 +11,7 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletResponse;
 
+import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
 
 /**
@@ -55,6 +56,15 @@ public class HorusToJSON {
 			try {
 				response.setContentType("application/json;charset=UTF-8");
 				response.getWriter().println(jsonString);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+
+		static public void write(HttpServletResponse response, JSONObject jsonString) {
+			try {
+				response.setContentType("application/json;charset=UTF-8");
+				response.getWriter().println(jsonString.toString());
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
