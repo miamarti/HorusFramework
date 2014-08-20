@@ -1,5 +1,7 @@
 package business;
 
+import java.sql.ResultSet;
+
 import javax.servlet.http.HttpServletRequest;
 
 import model.ActorBean;
@@ -21,7 +23,7 @@ public class ActorBO {
 	 * @param response
 	 * @param uri
 	 */
-	public Object getList(HttpServletRequest request, String[] uri) {
+	public ResultSet getList(HttpServletRequest request, String[] uri) {
 		if (access) {
 			return APIBaseDAO.ActorDAO.getInstance.getLista();
 		} else {
