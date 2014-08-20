@@ -9,5 +9,6 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Documents and Settings/miamarti/git/HorusFramework_demo/API/WebContent/WEB-INF/lib/commons-codec-1.9.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
