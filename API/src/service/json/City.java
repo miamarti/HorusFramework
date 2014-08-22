@@ -3,8 +3,8 @@ package service.json;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.horusframework.annotation.HorusBaseDAO;
-import com.horusframework.business.RESTFullCRUDImplement;
+import org.horusframework.annotation.HorusBaseDAO;
+import org.horusframework.business.RESTFullCRUDImplement;
 
 import dao.APIBaseDAO;
 

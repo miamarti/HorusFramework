@@ -2,7 +2,7 @@
     <wb-module deploy-name="API">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <dependent-module archiveName="HorusFramework.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/HorusFramework/HorusFramework">
+        <dependent-module archiveName="org.horusframework.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/org.horusframework/org.horusframework">
             <dependency-type>uses</dependency-type>
         </dependent-module>
         <property name="context-root" value="API"/>

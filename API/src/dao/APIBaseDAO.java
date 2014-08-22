@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import model.ActorBean;
 
-import com.horusframework.facade.HorusBaseDAOCRUDInterface;
+import org.horusframework.facade.HorusBaseDAOCRUDInterface;
 
 /**
  * @author miamarti
@@ -192,8 +192,7 @@ public class APIBaseDAO {
 		/*
 		 * (non-Javadoc)
 		 * 
-		 * @see dao.BaseDAOBean#setData(javax.servlet.http.HttpServletRequest,
-		 * java.lang.String[])
+		 * @see dao.BaseDAOBean#setData(javax.servlet.http.HttpServletRequest, java.lang.String[])
 		 */
 		public int[] setData(HttpServletRequest request, String... args) throws SQLException {
 			PreparedStatement stmt;
@@ -220,8 +219,7 @@ public class APIBaseDAO {
 		/*
 		 * (non-Javadoc)
 		 * 
-		 * @see dao.BaseDAOCRUDBean#getByWhere(java.lang.String,
-		 * java.lang.String)
+		 * @see dao.BaseDAOCRUDBean#getByWhere(java.lang.String, java.lang.String)
 		 */
 		public ResultSet getByWhere(String colName, String value) throws SQLException {
 			return super.getByWhere(colName, value, "city");
@@ -230,8 +228,7 @@ public class APIBaseDAO {
 		/*
 		 * (non-Javadoc)
 		 * 
-		 * @see dao.BaseDAOBean#delData(java.lang.String) TODO Validar antes de
-		 * deletar Area
+		 * @see dao.BaseDAOBean#delData(java.lang.String) TODO Validar antes de deletar Area
 		 */
 		public Boolean delData(String id) throws SQLException {
 			return super.delData(id, "city", "city_id");

@@ -2,8 +2,8 @@ package controller;
 
 import javax.servlet.annotation.WebServlet;
 
-import com.horusframework.annotation.HorusDomainPackage;
-import com.horusframework.controller.HorusFrontController;
+import org.horusframework.annotation.HorusDomainPackage;
+import org.horusframework.controller.HorusFrontController;
 
 /**
  * @author miamarti

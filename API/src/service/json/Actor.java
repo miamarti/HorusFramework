@@ -3,11 +3,11 @@ package service.json;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import business.ActorBO;
+import org.horusframework.annotation.HorusAccessId;
+import org.horusframework.business.HorusToJSON;
+import org.horusframework.facade.HorusRESTFullInterface;
 
-import com.horusframework.annotation.HorusAccessId;
-import com.horusframework.business.HorusToJSON;
-import com.horusframework.facade.HorusRESTFullInterface;
+import business.ActorBO;
 
 /**
  * @author miamarti

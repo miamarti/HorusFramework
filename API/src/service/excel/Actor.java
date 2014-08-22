@@ -3,10 +3,10 @@ package service.excel;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import business.ActorBO;
+import org.horusframework.annotation.HorusAccessId;
+import org.horusframework.business.HorusToXLS;
 
-import com.horusframework.annotation.HorusAccessId;
-import com.horusframework.business.HorusToXLS;
+import business.ActorBO;
 
 /**
  * @author miamarti
