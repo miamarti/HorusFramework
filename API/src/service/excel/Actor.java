@@ -2,14 +2,13 @@ package service.excel;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import org.horusframework.annotation.HorusAccessId;
 import org.horusframework.business.HorusToXLS;
 
 import business.ActorBO;
 
 /**
- * @author miamarti
+ * @author horusframework.org
  *
  */
 @HorusAccessId("33")

@@ -9,11 +9,11 @@ import org.horusframework.business.RESTFullCRUDImplement;
 import dao.APIBaseDAO;
 
 /**
- * @author miamarti
+ * @author horusframework.org
  *
  */
 @HorusBaseDAO(APIBaseDAO.CityDAO.class)
-public class City extends RESTFullCRUDImplement {
+public class CityJSON extends RESTFullCRUDImplement {
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response, String[] uri) throws Exception {
 		super.doGet(request, response, uri);

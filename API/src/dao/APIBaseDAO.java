@@ -12,7 +12,7 @@ import model.ActorBean;
 import org.horusframework.facade.HorusBaseDAOCRUDInterface;
 
 /**
- * @author miamarti
+ * @author horusframework.org
  * 
  */
 public class APIBaseDAO {

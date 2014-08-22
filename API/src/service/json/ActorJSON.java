@@ -2,7 +2,6 @@ package service.json;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import org.horusframework.annotation.HorusAccessId;
 import org.horusframework.business.HorusToJSON;
 import org.horusframework.facade.HorusRESTFullInterface;
@@ -10,11 +9,11 @@ import org.horusframework.facade.HorusRESTFullInterface;
 import business.ActorBO;
 
 /**
- * @author miamarti
+ * @author horusframework.org
  *
  */
 @HorusAccessId("33")
-public class Actor extends ActorBO implements HorusRESTFullInterface {
+public class ActorJSON extends ActorBO implements HorusRESTFullInterface {
 
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response, String[] uri) {

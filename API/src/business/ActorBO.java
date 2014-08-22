@@ -12,7 +12,7 @@ import org.json.simple.JSONObject;
 import dao.APIBaseDAO;
 
 /**
- * @author miamarti
+ * @author horusframework.org
  *
  */
 public class ActorBO {
