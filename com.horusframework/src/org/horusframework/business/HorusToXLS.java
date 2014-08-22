@@ -1,4 +1,4 @@
-package com.horusframework.business;
+package org.horusframework.business;
 
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;

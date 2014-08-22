@@ -1,4 +1,4 @@
-package com.horusframework.business;
+package org.horusframework.business;
 
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
@@ -10,11 +10,10 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-
-import com.horusframework.annotation.HorusAttachment;
-import com.horusframework.annotation.HorusBaseDAO;
-import com.horusframework.facade.HorusBaseDAOCRUDInterface;
-import com.horusframework.facade.HorusExcelInterface;
+import org.horusframework.annotation.HorusAttachment;
+import org.horusframework.annotation.HorusBaseDAO;
+import org.horusframework.facade.HorusBaseDAOCRUDInterface;
+import org.horusframework.facade.HorusExcelInterface;
 
 /**
  * @author miamarti

@@ -1,12 +1,12 @@
-package com.horusframework.dao;
+package org.horusframework.dao;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Locale;
 
-import oracle.jdbc.pool.OracleDataSource;
+import org.horusframework.annotation.HorusConnectionParameters;
 
-import com.horusframework.annotation.HorusConnectionParameters;
+import oracle.jdbc.pool.OracleDataSource;
 
 public class HorusOracleDriveConnection {
 

@@ -1,10 +1,10 @@
-package com.horusframework.controller;
+package org.horusframework.controller;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.horusframework.annotation.HorusDomainPackage;
+import org.horusframework.annotation.HorusDomainPackage;
 
 /**
  * @author miamarti

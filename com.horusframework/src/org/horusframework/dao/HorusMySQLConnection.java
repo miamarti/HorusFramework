@@ -1,8 +1,8 @@
-package com.horusframework.dao;
+package org.horusframework.dao;
 
 import java.sql.Connection;
 
-import com.horusframework.annotation.HorusConnectionParameters;
+import org.horusframework.annotation.HorusConnectionParameters;
 
 /**
  * @author miamarti

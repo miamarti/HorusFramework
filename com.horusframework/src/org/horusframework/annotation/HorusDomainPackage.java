@@ -1,4 +1,4 @@
-package com.horusframework.annotation;
+package org.horusframework.annotation;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;

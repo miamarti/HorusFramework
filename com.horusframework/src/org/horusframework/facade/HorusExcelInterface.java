@@ -1,4 +1,4 @@
-package com.horusframework.facade;
+package org.horusframework.facade;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

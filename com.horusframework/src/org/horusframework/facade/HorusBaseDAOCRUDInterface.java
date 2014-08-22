@@ -1,4 +1,4 @@
-package com.horusframework.facade;
+package org.horusframework.facade;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

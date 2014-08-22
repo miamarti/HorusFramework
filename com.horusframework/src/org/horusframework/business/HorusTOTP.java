@@ -1,4 +1,4 @@
-package com.horusframework.business;
+package org.horusframework.business;
 
 import java.util.Date;
 import java.util.concurrent.TimeUnit;

@@ -1,11 +1,11 @@
-package com.horusframework.business;
+package org.horusframework.business;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.horusframework.annotation.HorusAccessId;
-import com.horusframework.annotation.HorusBaseDAO;
-import com.horusframework.facade.HorusBaseDAOCRUDInterface;
+import org.horusframework.annotation.HorusAccessId;
+import org.horusframework.annotation.HorusBaseDAO;
+import org.horusframework.facade.HorusBaseDAOCRUDInterface;
 
 /**
  * @author miamarti

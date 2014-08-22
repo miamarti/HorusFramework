@@ -1,4 +1,4 @@
-package com.horusframework.annotation;
+package org.horusframework.annotation;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -8,12 +8,10 @@ import java.lang.annotation.RetentionPolicy;
  *
  */
 @Retention(RetentionPolicy.RUNTIME)
-public @interface HorusBaseDAO {
+public @interface HorusAccessId {
 
 	/**
 	 * @return
 	 */
-	@SuppressWarnings("rawtypes")
-	Class value();
-
+	String value() default "";
 }

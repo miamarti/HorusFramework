@@ -1,10 +1,10 @@
-package com.horusframework.dao;
+package org.horusframework.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-import com.horusframework.annotation.HorusConnectionParameters;
+import org.horusframework.annotation.HorusConnectionParameters;
 
 public enum HorusMySQLDriveConnection {
 	getInstance;

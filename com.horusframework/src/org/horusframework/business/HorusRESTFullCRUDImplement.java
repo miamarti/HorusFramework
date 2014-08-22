@@ -1,4 +1,4 @@
-package com.horusframework.business;
+package org.horusframework.business;
 
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
@@ -10,10 +10,9 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.horusframework.facade.HorusBaseDAOCRUDInterface;
+import org.horusframework.facade.HorusRESTFullCRUDInterface;
 import org.json.simple.JSONValue;
-
-import com.horusframework.facade.HorusBaseDAOCRUDInterface;
-import com.horusframework.facade.HorusRESTFullCRUDInterface;
 
 /**
  * @author miamarti
