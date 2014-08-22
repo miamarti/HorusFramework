@@ -12,7 +12,7 @@ import business.ActorBO;
  *
  */
 @HorusAccessId("33")
-public class Actor extends ActorBO {
+public class ActorXLS extends ActorBO {
 
 	/**
 	 * @param request
