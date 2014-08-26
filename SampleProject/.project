@@ -3,7 +3,6 @@
 	<name>HorusFramework-SampleProject</name>
 	<comment></comment>
 	<projects>
-		<project>org.horusframework</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
