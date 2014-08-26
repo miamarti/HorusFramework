@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>HorusFramework</title>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+	<div class="container">
+		<h1>Actor</h1>
+		<hr />
+		<table id="table" class="table table-striped">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Last Update</th>
+				</tr>
+			</thead>
+			<tbody></tbody>
+		</table>
+	</div>
+
+	<script>
+		$.get('fc/Actor', function(data) {
+			var lines = '';
+			data.forEach(function(bean) {
+				lines += '<tr><td>' + bean.actor_id + '</td><td>' + bean.first_name + '</td><td>' + bean.last_name + '</td><td>' + bean.last_update + '</td></tr>';
+			});
+			$('#table tbody').html(lines);
+		});
+	</script>
+</body>
+</html>

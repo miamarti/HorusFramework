@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="API">
+    <wb-module deploy-name="HorusFramework-SampleProject">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
         <dependent-module archiveName="org.horusframework.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/org.horusframework/org.horusframework">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <property name="context-root" value="API"/>
-        <property name="java-output-path" value="/API/build/classes"/>
+        <property name="java-output-path" value="/HorusFramework-SampleProject/build/classes"/>
+        <property name="context-root" value="HorusFramework-SampleProject"/>
     </wb-module>
 </project-modules>
