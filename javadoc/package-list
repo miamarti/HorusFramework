@@ -1,7 +1,7 @@
-com.horusframework.annotation
-com.horusframework.business
-com.horusframework.controller
-com.horusframework.dao
-com.horusframework.facade
+org.horusframework.annotation
+org.horusframework.business
+org.horusframework.controller
+org.horusframework.dao
+org.horusframework.facade
 org.json.simple
 org.json.simple.parser
